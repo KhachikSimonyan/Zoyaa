@@ -1,82 +1,139 @@
-body {
+* {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #ffdde1, #ee9ca7);
-  overflow-x: hidden; /* թույլ կտա սքրոլ անել ներքև */
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  background: #fdf2f8;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
 
 .container {
-  text-align: center;
-  padding: 30px;
-}
-
-h1 {
-  font-size: 2.5em;
-  color: #d6336c;
-  animation: fadeIn 2s ease-in-out;
+  margin-top: 20px;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #zoya-img {
-  width: 220px;
-  border-radius: 50%;
-  margin: 20px 0;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  animation: float 3s ease-in-out infinite;
+  width: 250px;
+  border-radius: 20px;
+  margin: 15px 0;
 }
 
 .lead {
-  font-size: 1.3em;
-  color: #333;
+  font-size: 20px;
+  color: #d63384;
+}
+.hidden-content {
+  display: flex;
+  flex-direction: column;
+  padding-block: 20px;
+  gap: 20px;
 }
 
-.wishes {
-  margin-top: 30px;
+.wishes .msg {
+  font-size: 18px;
+  margin: 5px 0;
 }
 
-.msg {
-  font-size: 1.2em;
-  margin: 10px 0;
-  color: #444;
-  animation: fadeInUp 2s ease-in-out;
+video {
+  width: 100%;
+}
+
+.password-box {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.password-box input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ff69b4;
+  outline: none;
+}
+
+.password-box input:focus {
+  border-color: #d63384;
+} 
+
+.password-box button {
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+}
+
+.password-box button:hover {
+  background-color: #d63384;
 }
 
 .sparkles {
-  position: fixed;
-  top: 0;
-  left: 0;
+  z-index: 100;
+}
+
+.balloons-container {
+  position: absolute;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
+  height: 70vh;
+  top: 30vh;
+  left: 0;
   overflow: hidden;
 }
 
-.sparkle {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-  animation: sparkleAnim 3s linear infinite;
-}
+.balloon {
+      position: absolute;
+      bottom: -100px;
+      border-radius: 50%;
+      background: center / cover;
+      background-color: #ff69b4;
+      width: 60px;
+      height: 80px;
+      animation: floatUp 6s ease-in infinite;
+      box-shadow: 0 0 13px rgba(240, 40, 40, 0.3);
+    }
+    .balloon:nth-child(odd) {
+      background-color: #ff6347;
+    }
+    .balloon:nth-child(even) {
+      background-color: #32cd32;
+    }
+    .balloon .string {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 2px;
+      height: 200px;
+      background-color: rgb(151, 65, 65);
+      transform: translateX(-50%);
+    }
+    @keyframes floatUp {
+      0% {
+        bottom: -100px;
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        opacity: 0;
+      }
+    }
+    .message {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      color: #ff1493;
+      font-family: 'Arial', sans-serif;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    }
 
-/* անիմացիաներ */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes sparkleAnim {
-  0% { transform: translateY(0) scale(1); opacity: 1; }
-  100% { transform: translateY(100vh) scale(0); opacity: 0; }
-}

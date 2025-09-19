@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С Днем Рождения!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f0f8ff;
+      overflow: hidden;
+      position: relative;
+       background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    }
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      border-radius: 50%;
+      background-color: #ff69b4;
+      width: 60px;
+      height: 80px;
+      animation: floatUp 6s ease-in infinite;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+    .balloon:nth-child(odd) {
+      background-color: #ff6347;
+    }
+    .balloon:nth-child(even) {
+      background-color: #32cd32;
+    }
+    .balloon .string {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 2px;
+      height: 200px;
+      background-color: rgb(151, 65, 65);
+      transform: translateX(-50%);
+    }
+    @keyframes floatUp {
+      0% {
+        bottom: -100px;
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        opacity: 0;
+      }
+    }
+    .message {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      color: #ff1493;
+      font-family: 'Arial', sans-serif;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message">С Днем Рождения!</div>
+
+  <script>
+    const balloonsContainer = document.body;
+
+    function createBalloon() {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      
+      const string = document.createElement('div');
+      string.classList.add('string');
+      
+      balloon.appendChild(string);
+
+      const randomX = Math.random() * window.innerWidth; // Случайное положение по оси X
+      const randomDelay = Math.random() * 3; // Случайная задержка для анимации
+
+      balloon.style.left = `${randomX}px`;
+      balloon.style.animationDelay = `${randomDelay}s`;
+
+      balloonsContainer.appendChild(balloon);
+
+      setTimeout(() => {
+        balloon.remove();
+      }, 6000); // Убираем шарик после завершения анимации
+    }
+
+    // Создаем шары каждую секунду
+    setInterval(createBalloon, 500);
+  </script>
+
+</body>
+</html>

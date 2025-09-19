@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <p>Սպասեք ամսի 20-ին կլինի</p>
-</body>
-</html>
-<!-- <!DOCTYPE html>
 <html lang="hy">
 <head>
   <meta charset="UTF-8">
@@ -19,24 +8,37 @@
 </head>
 <body>
   <div class="container">
-    <h1>Շնորհավոր ծնունդ, Զոյա! 🎂✨</h1>
-    <img id="zoya-img" src="zoya.jpg" alt="Zoya">
+    <h1>Շնորհավոր ծնունդ, Զոյա ❤ 🎂✨</h1>
+    <img id="zoya-img" src="IMG_2975.JPG" alt="Zoya">
     <p class="lead">Թող քո օրը լի լինի ժպիտներով, սիրով ու բազում նվերներով 💖</p>
     
-    <div class="wishes">
-      <div class="msg">🎈 Թող իրականանան երազանքներդ</div>
-      <div class="msg">🌷 Երջանկություն ու առողջություն</div>
-      <div class="msg">🚀 Մեծ հաջողություններ ու արկածներ</div>
+    <div class="hidden-content" style="display: none;">
+      <div class="wishes" >
+        <div class="msg">🌷 Թող իրականանան երազանքներդ</div>
+        <div class="msg">🌷 Երջանկություն ու առողջություն</div>
+        <div class="msg">🌷 Մեծ հաջողություններ ու արկածներ</div>
+      </div>
+
+      <!-- Տեսահոլովակ (սկզբում թաքնված) -->
+      <div id="video-container" >
+        <video width="600" controls autoplay>
+          <source src="IMG_2992.MOV" type="video/mp4">
+          Քո բրաուզերը չի աջակցում video tag-ը։
+        </video>
+      </div>
     </div>
+    
+    <!-- Գաղտնաբառի մուտք -->
+    <div class="password-box">
+      <input type="password" id="password" placeholder="Մուտքագրիր գաղտնաբառը">
+      <button onclick="checkPassword()">✔ Մուտք</button>
+    </div>
+    
   </div>
 
-
   <div class="sparkles"></div>
+  <div class="balloons-container"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
- -->
-
