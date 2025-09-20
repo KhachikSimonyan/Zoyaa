@@ -1,6 +1,6 @@
 
 // Գաղտնաբառը (պահված է կոդի մեջ)
-const SECRET = "vatmard";
+const SECRET = "gitem";
 // Նկարների զանգված ========================
 const imagesList = ["IMG_2975.JPG","photo_.jpg","IMG_1980.JPG","IMG_0244.JPG","Фото086.jpg"];
 // =========================================
